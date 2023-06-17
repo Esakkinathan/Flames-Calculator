@@ -12,12 +12,12 @@ root.configure(bg="#121212")
 #username label and text entry box
 Label(root, text="Enter Firstname:",bg="#121212",fg="White",font = ("Courier", 15)).place(x=20,y=20)
 n1=StringVar()
-Entry(root, textvariable=n1,bg="#121212",fg="White",bd=3).place(x=250,y=20)  
+Entry(root, textvariable=n1,bg="#121212",fg="White",bd=3,insertbackground="white").place(x=250,y=20)  
 
 
 Label(root, text="Enter Secondname:",bg="#121212",fg="White",font = ("Courier", 15)).place(x=20,y=70)
 n2=StringVar()
-Entry(root, textvariable=n2,bg="#121212",fg="White",bd=3).place(x=250,y=70)  
+Entry(root, textvariable=n2,bg="#121212",fg="White",bd=3,insertbackground="white").place(x=250,y=70)  
 Button(root, text="Check",bg="#121212",fg="#c0c0c0",cursor="dot",activebackground="#121212",activeforeground="#c0c0c0",font=("Courier",10),relief=FLAT ,command=lambda : flame(n1.get(),n2.get())).place(x=100,y=130) 
 Button(root, text="Clear",bg="#121212",fg="#c0c0c0",cursor="dot",activebackground="#121212",activeforeground="#c0c0c0",font=("Courier",10),relief=FLAT, command=lambda : clear()).place(x=300,y=130) 
 
@@ -139,7 +139,7 @@ def flame(s1,s2):
 
 			def random_length():
 				return random.randint(5,25)
-
+			"""
 			n=0
 			while (n<=50):
 				colors = ['red','blue','orange','yellow','magenta','purple','peru','ivory','dark orange']
@@ -150,7 +150,7 @@ def flame(s1,s2):
 
 				starsglow(x,y,color,length)
 				n+=1
-	
+			"""
 			sec=5
 			t1=turtle.Turtle()
 			while (sec!=0):
@@ -162,6 +162,7 @@ def flame(s1,s2):
 				sec-=1
 				time.sleep(1)
 			t1.clear()
+			t.remove()
 			turtle.bye()
 			root.destroy()
 
